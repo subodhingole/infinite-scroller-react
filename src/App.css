@@ -37,7 +37,6 @@
   /* make a container showing card 3 on a row */
   /* using flex */
   overflow: hidden;
-  margin: 0 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
