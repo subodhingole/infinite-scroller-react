@@ -8,15 +8,21 @@ const App = () => {
   const [logged, setLogged] = useState(false);
 
   function handleLogin() {
-    setLogged(true);
+    console.log("yeah");
+    setLogged(!logged);
   }
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login handleLogin={handleLogin} />} />
-        <Route path="/home" element={<Home logged={logged} />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login handleLogin={handleLogin} />} />
+          <Route
+            path="/home"
+            element={<Home logged={logged} setLogged={handleLogin} />}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 

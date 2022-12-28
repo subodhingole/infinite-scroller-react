@@ -29,7 +29,7 @@ const Login = ({ handleLogin }) => {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <h2>Log In</h2>
+        <h2>Log In (user: foo; pass: bar) </h2>
         {error && <p className="error">{error}</p>}
         <label htmlFor="username">
           <input

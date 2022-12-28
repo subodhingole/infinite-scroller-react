@@ -50,3 +50,15 @@
 .retry {
   margin-left: 30px;
 }
+
+.logout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* red logout button */
+  background-color: #f44336;
+}

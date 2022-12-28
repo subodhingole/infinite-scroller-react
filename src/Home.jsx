@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ContactCard from "./ContactCard";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
-const Home = ({ logged }) => {
+const Home = ({ logged, setLogged }) => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
@@ -54,19 +55,22 @@ const Home = ({ logged }) => {
     );
   }
   return (
-    <div className="container">
-      <ul>
-        {contacts.map((contact) => (
-          <ContactCard
-            key={contact.email}
-            email={contact.email}
-            name={contact.name}
-            picture={contact.picture.thumbnail}
-          />
-        ))}
-      </ul>
-      {loading && <p>Loading...</p>}
-    </div>
+    <>
+      <Logout toggle={setLogged} />
+      <div className="container">
+        <ul>
+          {contacts.map((contact) => (
+            <ContactCard
+              key={contact.login.uuid}
+              email={contact.email}
+              name={contact.name}
+              picture={contact.picture.thumbnail}
+            />
+          ))}
+        </ul>
+        {loading && <p>Loading...</p>}
+      </div>
+    </>
   );
 };
 
