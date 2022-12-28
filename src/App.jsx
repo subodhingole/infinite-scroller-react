@@ -12,7 +12,6 @@ const App = () => {
   }
   return (
     <BrowserRouter>
-      <h1 className="header">Infinte Scroller</h1>
       <Routes>
         <Route path="/" element={<Login handleLogin={handleLogin} />} />
         <Route path="/home" element={<Home logged={logged} />} />
